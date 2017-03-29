@@ -1,0 +1,40 @@
+
+
+import webbrowser
+class Movie():
+    """this is class provides a way to store moive related information"""
+
+    VALID_RATINGS = ['G','PG','PG13','R']
+
+    def __init__(self,movie_title, movie_storyline,poster_image,trailer_youtube):
+        self.title = movie_title
+        self.storyline = movie_storyline
+        self.poster_image_url = poster_image
+        self.trailer_youtube_url = trailer_youtube
+
+    def open_poster(self):
+        webbrowser.open(self.poster_image_url)
+
+    def show_trailer(self):
+        webbrowser.open(self.trailer_youtube_url)
+
+
+import fresh_tomatoes
+import media
+
+Pulp_fiction = media.Movie("Pulp fiction",
+                "Pulp Fiction connects the intersecting storylines of Los Angeles mobsters, fringe players, small-time criminals, and a mysterious briefcase. The film's title refers to the pulp magazines and hardboiled crime novels popular during the mid-20th century, known for their graphic violence and punchy dialogue.",
+                "https://originalvintagemovieposters.com/wp-content/uploads/2014/07/PULP-FICTION-2100.jpg",
+                "https://www.youtube.com/watch?v=s7EdQ4FqbhY")
+                
+Life_of_Pie = media.Movie("Life of Pie","The storyline revolves around an Indian man named Pi Patel, telling a novelist about his life story, and how at 16 he survives a shipwreck in which his family dies, and is adrift in the Pacific Ocean on a lifeboat with a Bengal tiger.",
+                        "https://upload.wikimedia.org/wikipedia/en/5/57/Life_of_Pi_2012_Poster.jpg",
+                        "https://www.youtube.com/watch?v=j9Hjrs6WQ8M")
+
+The_Dark_Knight = media.Movie("The Dark Knight ",
+                        "In the film, Bruce Wayne/Batman (Bale), James Gordon (Oldman) and Harvey Dent (Eckhart) form an alliance to dismantle organized crime in Gotham City, but are menaced by a criminal mastermind known as the Joker (Ledger) who seeks to undermine Batman's influence and create chaos.",
+                        "http://www.impawards.com/2008/posters/dark_knight_ver12_xlg.jpg",
+                        "https://www.youtube.com/watch?v=EXeTwQWrcwY")
+
+movies = [Pulp_fiction,Life_of_Pie,The_Dark_Knight]
+fresh_tomatoes.open_movies_page(movies)
